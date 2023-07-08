@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//echo "블레이드 페이지 파일을 불러오기 바로전<br/>";
+
 Route::get('/', function () {
     return view('welcome');
 });

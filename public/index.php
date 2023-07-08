@@ -3,6 +3,8 @@
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
+//echo "이곳은 출발점 입니다<br/>";
+
 define('LARAVEL_START', microtime(true));
 
 /*

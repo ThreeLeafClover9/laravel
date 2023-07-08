@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
+//echo "라라벨에서 쓸 php 파일들을 단체로 모으는 곳<br/>";
+
 return [
 
     /*
