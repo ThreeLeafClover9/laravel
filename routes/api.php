@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::post('/post', function (Request $request) {
+//    $data = $request->input('name');
+//    return view('routing', ['id' => '', 'data' => $data]);
+//});
+Route::post('/post', [NewController::class, 'post']);

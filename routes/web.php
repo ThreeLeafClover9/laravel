@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+//Route::get('/get', function () {
+//    return view('routing');
+//});
+Route::get('/get', [NewController::class, 'index']);
+
+Route::get('/get/{id}', function ($id) {
+    return view('routing_parameter', ['id' => $id, 'data' => '']);
 });
