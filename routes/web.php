@@ -3,6 +3,7 @@
 use App\Http\Controllers\AController;
 use App\Http\Controllers\NewController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 //echo "블레이드 페이지 파일을 불러오기 바로전<br/>";
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    return View::make('welcome');
 });
 
 //Route::get('/get', function () {
@@ -36,3 +38,7 @@ Route::get('/one', function () {
         echo "<br/>";
     }
 });
+
+Route::get('/test', function () {
+    return '미들웨어 테스트 페이지 입니다.';
+})->middleware('test');
