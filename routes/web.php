@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AController;
 use App\Http\Controllers\NewController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,11 @@ Route::get('/get', [NewController::class, 'index']);
 
 Route::get('/get/{id}', function ($id) {
     return view('routing_parameter', ['id' => $id, 'data' => '']);
+});
+
+Route::get('/one', function () {
+    for ($i = 0; $i < 3; $i++) {
+        echo app(AController::class)->multiple(2);
+        echo "<br/>";
+    }
 });
