@@ -23,4 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    $data = $request->input('name');
 //    return view('routing', ['id' => '', 'data' => $data]);
 //});
-Route::post('/post', [NewController::class, 'post']);
+Route::post('/route', [NewController::class, 'post']);

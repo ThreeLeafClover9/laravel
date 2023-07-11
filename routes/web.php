@@ -23,22 +23,26 @@ Route::get('/', function () {
     return View::make('welcome');
 });
 
-//Route::get('/get', function () {
+//Route::get('/route', function () {
 //    return view('routing');
 //});
-Route::get('/get', [NewController::class, 'index']);
+Route::get('/route', [NewController::class, 'index']);
 
-Route::get('/get/{id}', function ($id) {
+Route::get('/route/{id}', function ($id) {
     return view('routing_parameter', ['id' => $id, 'data' => '']);
 });
 
-Route::get('/one', function () {
+Route::get('/provider', function () {
     for ($i = 0; $i < 3; $i++) {
         echo app(AController::class)->multiple(2);
         echo "<br/>";
     }
 });
 
-Route::get('/test', function () {
+Route::get('/middleware', function () {
     return '미들웨어 테스트 페이지 입니다.';
 })->middleware('test');
+
+Route::get('/livewire', function () {
+    return View::make('livewire');
+});
