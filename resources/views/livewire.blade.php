@@ -10,7 +10,7 @@
         @livewireStyles
     </head>
     <body>
-        <livewire:welcome/>
+        <livewire:welcome :post="$post" :collection="$collection"/>
         @livewireScripts
     </body>
 </html>

@@ -44,5 +44,5 @@ Route::get('/middleware', function () {
 })->middleware('test');
 
 Route::get('/livewire', function () {
-    return View::make('livewire');
+    return View::make('livewire', ['post' => '자식에게 넘겨줄 값', 'collection' => ['livewire', 'second']]);
 });
