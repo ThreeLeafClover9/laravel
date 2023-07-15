@@ -14,7 +14,7 @@
         <h1>OFF</h1>
     @endif
     <button wire:click="$toggle('toggle')">토글이벤트</button>
-    <h1>1</h1>
+    <h1>유효성 검사</h1>
     <form wire:click.prevent="validation">
         <input type="text" placeholder="이름을 입력해 주세요." wire:model="name">
         @error('name')

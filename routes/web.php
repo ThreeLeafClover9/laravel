@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AController;
 use App\Http\Controllers\NewController;
+use App\Http\Controllers\SampleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 
@@ -46,3 +47,5 @@ Route::get('/middleware', function () {
 Route::get('/livewire', function () {
     return View::make('livewire', ['post' => '자식에게 넘겨줄 값', 'collection' => ['livewire', 'second']]);
 });
+
+Route::get('/mysql', [SampleController::class, 'index']);
