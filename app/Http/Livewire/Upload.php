@@ -11,6 +11,7 @@ class Upload extends Component
     use WithFileUploads;
 
     public $photo;
+    public $abs_root;
     public $path;
 
     public function save()
@@ -18,13 +19,13 @@ class Upload extends Component
         $this->validate([
             'photo' => 'image|max:1024'
         ]);
-        $abs_root = $this->photo->storeAs('public', 'test_image.png');
-        $this->path = Storage::url($abs_root);
+        $this->abs_root = $this->photo->store('photos', 's3');
+        $this->path = Storage::disk('s3')->url($this->abs_root);
     }
 
     public function down()
     {
-        return Storage::download('public/test_image.png');
+        return Storage::disk('s3')->download($this->abs_root);
     }
 
     public function render()
