@@ -49,3 +49,7 @@ Route::get('/livewire', function () {
 });
 
 Route::get('/mysql', [SampleController::class, 'index']);
+
+Route::get('/crud', function () {
+    return view('crud');
+});
