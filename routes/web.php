@@ -53,3 +53,7 @@ Route::get('/mysql', [SampleController::class, 'index']);
 Route::get('/crud', function () {
     return view('crud');
 });
+
+Route::get('/upload', function () {
+    return view('upload');
+});
